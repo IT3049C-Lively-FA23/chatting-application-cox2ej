@@ -2,6 +2,7 @@
 const nameInput = document.getElementById("my-name-input");
 const messageInput = document.getElementById("my-message");
 const sendButton = document.getElementById("send-button");
+const saveUsernameButton = document.getElementById("save-username-button");
 const chatBox = document.getElementById("chat");
 
 // Server URL
@@ -12,9 +13,6 @@ function fetchMessages() {
     return fetch(serverURL)
         .then(response => response.json());
 }
-
-// Check if name is already saved in localStorage
-const savedName = localStorage.getItem("chatUsername");
 
 // Formatter function for message objects
 function formatMessage(message, myNameInput) {
@@ -68,32 +66,31 @@ updateMessages();
 const MILLISECONDS_IN_TEN_SECONDS = 10000;
 setInterval(updateMessages, MILLISECONDS_IN_TEN_SECONDS);
 
-
 // Function to send messages to the server
 function sendMessages(username, text) {
-  const newMessage = {
-      sender: username,
-      text: text,
-      timestamp: new Date().getTime() // Using getTime() to get the timestamp in milliseconds
-  };
+    const newMessage = {
+        sender: username,
+        text: text,
+        timestamp: new Date().getTime() // Using getTime() to get the timestamp in milliseconds
+    };
 
-  fetch(serverURL, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newMessage)
-  });
+    fetch(serverURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newMessage)
+    });
 }
 
 // Event listener for the send button
 sendButton.addEventListener("click", function(sendButtonClickEvent) {
-  sendButtonClickEvent.preventDefault();
-  const sender = nameInput.value;
-  const message = messageInput.value;
+    sendButtonClickEvent.preventDefault();
+    const sender = nameInput.value;
+    const message = messageInput.value;
 
-  sendMessages(sender, message);
-  messageInput.value = "";
+    sendMessages(sender, message);
+    messageInput.value = "";
 });
 
 // Event listener for Save Username button
@@ -110,6 +107,8 @@ saveUsernameButton.addEventListener("click", function() {
 messageInput.disabled = true;
 sendButton.disabled = true;
 
+// Load saved name from localStorage
+const savedName = localStorage.getItem("chatUsername");
 if (savedName) {
     nameInput.value = savedName;
     messageInput.disabled = false;
