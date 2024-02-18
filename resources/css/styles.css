@@ -148,7 +148,22 @@ body.dark-mode {
     color: #fff;
 }
 
-.dark-mode .message:before .message:after{
+.dark-mode .yours .message:before {
+  background: #666;
+  color: #fff;
+}
+
+.dark-mode .yours .message:after {
+  background: #666;
+  color: #fff;
+}
+
+.dark-mode .mine .message:before {
+  background: #666;
+  color: #fff;
+}
+
+.dark-mode .mine .message:after {
   background: #666;
   color: #fff;
 }
