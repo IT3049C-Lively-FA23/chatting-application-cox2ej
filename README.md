@@ -17,8 +17,12 @@ how many points out of 20 do you deserve on this assignment: 20/20
 
 ## Self-Reflection:
 <!-- Write your self-reflection under this line -->
-This assignment was very helpful in starting to get into less basic topics and tasks. Learning how to interact with a server through sending and receiving HTTP requests is a new experience and this assignment was very helpful as an introduction
+This assignment was very helpful in starting to get into less basic topics and tasks. Learning how to interact with a server through sending and receiving HTTP requests is a new experience and this assignment was very helpful as an introduction.
+Part 2:
+This assignment was my first time using session storage and local storage. I think implementing this new funcionality in a project that I was already familiar with made it much easier to understand.
 ### How long it took me to finish this?
+~ 1 hour
+Part 2:
 ~ 1 hour
 
 ## Discussion Questions:
