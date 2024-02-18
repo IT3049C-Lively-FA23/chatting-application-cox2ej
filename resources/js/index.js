@@ -13,6 +13,9 @@ function fetchMessages() {
         .then(response => response.json());
 }
 
+// Check if name is already saved in localStorage
+const savedName = localStorage.getItem("chatUsername");
+
 // Formatter function for message objects
 function formatMessage(message, myNameInput) {
     const time = new Date(message.timestamp);
@@ -91,4 +94,28 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
 
   sendMessages(sender, message);
   messageInput.value = "";
+});
+
+// Disable message input until a name is provided and saved to localStorage
+messageInput.disabled = true;
+sendButton.disabled = true;
+
+if (savedName) {
+    nameInput.value = savedName;
+    messageInput.disabled = false;
+    sendButton.disabled = false;
+}
+
+// Event listener for name input change
+nameInput.addEventListener("input", function() {
+    const name = nameInput.value.trim();
+    if (name) {
+        localStorage.setItem("chatUsername", name);
+        messageInput.disabled = false;
+        sendButton.disabled = false;
+    } else {
+        localStorage.removeItem("chatUsername");
+        messageInput.disabled = true;
+        sendButton.disabled = true;
+    }
 });
