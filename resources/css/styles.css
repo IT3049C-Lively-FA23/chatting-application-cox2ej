@@ -148,6 +148,11 @@ body.dark-mode {
     color: #fff;
 }
 
+.dark-mode .message:before .message:after{
+  background: #666;
+  color: #fff;
+}
+
 .dark-mode .sender-info {
     color: #ccc;
 }
