@@ -159,7 +159,7 @@ body.dark-mode {
 }
 
 .dark-mode .mine .message:before {
-  background: #666;
+  background: #444;
   color: #fff;
 }
 
