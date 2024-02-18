@@ -154,7 +154,7 @@ body.dark-mode {
 }
 
 .dark-mode .yours .message:after {
-  background: #666;
+  background: #222;
   color: #fff;
 }
 
@@ -164,7 +164,7 @@ body.dark-mode {
 }
 
 .dark-mode .mine .message:after {
-  background: #666;
+  background: #222;
   color: #fff;
 }
 
