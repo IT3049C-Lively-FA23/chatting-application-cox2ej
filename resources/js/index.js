@@ -1,4 +1,26 @@
-// References to HTML elements
+// Reference to HTML elements for dark mode
+const toggleDarkModeButton = document.getElementById("toggle-dark-mode");
+const body = document.body;
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    body.classList.toggle("dark-mode");
+    // Save dark mode preference to localStorage
+    const isDarkMode = body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+}
+
+// Event listener for toggle dark mode button
+toggleDarkModeButton.addEventListener("click", toggleDarkMode);
+
+// Check dark mode preference from localStorage
+const darkModeEnabled = JSON.parse(localStorage.getItem("darkMode"));
+if (darkModeEnabled) {
+    body.classList.add("dark-mode");
+}
+
+
+// References to HTML elements for chat function
 const nameInput = document.getElementById("my-name-input");
 const messageInput = document.getElementById("my-message");
 const sendButton = document.getElementById("send-button");

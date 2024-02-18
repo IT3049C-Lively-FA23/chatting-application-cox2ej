@@ -120,3 +120,44 @@ footer {
   background: white;
   border-bottom-left-radius: 10px;
 }
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background: #333;
+}
+
+.dark-mode .jumbotron {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode .messages .message {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode .messages.yours .message {
+    background: #666;
+    color: #fff;
+}
+
+.dark-mode .sender-info {
+    color: #ccc;
+}
+
+.dark-mode input[type="text"],
+.dark-mode .btn {
+    background: #333;
+    color: #fff;
+}
+
+.dark-mode input[type="text"]::placeholder {
+    color: #ccc;
+}
