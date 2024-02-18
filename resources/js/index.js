@@ -96,6 +96,16 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
   messageInput.value = "";
 });
 
+// Event listener for Save Username button
+saveUsernameButton.addEventListener("click", function() {
+    const name = nameInput.value.trim();
+    if (name) {
+        localStorage.setItem("chatUsername", name);
+    } else {
+        localStorage.removeItem("chatUsername");
+    }
+});
+
 // Disable message input until a name is provided and saved to localStorage
 messageInput.disabled = true;
 sendButton.disabled = true;
